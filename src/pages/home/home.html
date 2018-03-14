@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <input type="text" [(ngModel)]="user">
+    <input type="text" [(ngModel)]="messageData">
+    <button (click)="addMessage()">Go</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="overflow: scroll; height: 90%">
+    <div *ngFor="let data of messages">
+      <ion-item style="border-right: solid 5px green;">
+        <p class="chat-text" item-left>
+          <strong>{{data.sender_id}}: </strong> {{data.content}}
+        </p>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
